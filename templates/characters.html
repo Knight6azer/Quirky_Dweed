@@ -6,12 +6,23 @@
         <header class="mb-5 d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4">
             <div>
                 <h1 class="fw-bold mb-3"><span class="gradient-text">Character</span> Hub</h1>
-                <p class="text-secondary lead mb-0">Detailed profiles and lore for all Spirit Blossom representatives.</p>
+                <p class="text-secondary lead mb-0">Detailed profiles and lore for all Quirky_Dweed representatives.</p>
             </div>
             <div class="search-container">
-                <form action="/characters" method="get" class="position-relative">
-                    <input type="text" name="q" class="form-control bg-darker border-light border-opacity-10 text-light rounded-pill px-4 py-2" placeholder="Search characters..." value="{{ search_query }}">
-                    <button type="submit" class="btn position-absolute end-0 top-0 h-100 text-secondary border-0"><i class="fas fa-search"></i></button>
+                <form action="/characters" method="get" class="d-flex gap-2">
+                    <div class="position-relative flex-grow-1">
+                        <input type="text" name="q" class="form-control bg-darker border-light border-opacity-10 text-light rounded-pill px-4 py-2 w-100" placeholder="Search characters..." value="{{ search_query }}">
+                        <button type="submit" class="btn position-absolute end-0 top-0 h-100 text-secondary border-0"><i class="fas fa-search"></i></button>
+                    </div>
+                    <select name="role" class="form-select bg-darker border-light border-opacity-10 text-light rounded-pill px-4 py-2" style="width: auto;" onchange="this.form.submit()">
+                        <option value="">All Roles</option>
+                        <option value="Mage" {% if selected_role == 'Mage' %}selected{% endif %}>Mage</option>
+                        <option value="Fighter" {% if selected_role == 'Fighter' %}selected{% endif %}>Fighter</option>
+                        <option value="Support" {% if selected_role == 'Support' %}selected{% endif %}>Support</option>
+                        <option value="Assassin" {% if selected_role == 'Assassin' %}selected{% endif %}>Assassin</option>
+                        <option value="Marksman" {% if selected_role == 'Marksman' %}selected{% endif %}>Marksman</option>
+                        <option value="Tank" {% if selected_role == 'Tank' %}selected{% endif %}>Tank</option>
+                    </select>
                 </form>
             </div>
         </header>

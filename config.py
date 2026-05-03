@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    """Centralized configuration for Spirit Blossom Hub."""
+    """Centralized configuration for Quirky_Dweed."""
     
     # App Settings
-    APP_TITLE = "Spirit Blossom Hub"
+    APP_TITLE = "Quirky_Dweed"
     APP_VERSION = "2.1.0"
-    APP_DESCRIPTION = "A premium platform for Spirit Blossom lore, rankings, and resources."
+    APP_DESCRIPTION = "A premium platform for Quirky_Dweed lore, rankings, and resources."
     
     # Supabase Configuration
     SUPABASE_URL = os.getenv("SUPABASE_URL")

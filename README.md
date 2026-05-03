@@ -1,16 +1,18 @@
-# 🌸 Spirit Blossom Hub 2.1
+# 🌸 Quirky_Dweed 2.1
 
-A premium, high-performance platform for Spirit Blossom enthusiasts. Explore detailed character lore, track real-time meta rankings, and access curated community resources—all in one immersive experience.
+A premium, high-performance platform for Quirky_Dweed enthusiasts. Explore detailed character lore, track real-time meta rankings, and access curated community resources—all in one immersive experience.
 
 ![Hero Preview](/static/hero-bg.jpg)
 
 ## ✨ Premium Features
 
-- **🎭 Character Sanctuary**: Deep dives into every Spirit Blossom representative, featuring rich lore, interactive profiles, and real-time search.
+- **🎭 Character Sanctuary**: Deep dives into every Quirky_Dweed representative, featuring rich lore, interactive profiles, and real-time search.
 - **📊 Astral Tier Lists**: Live meta-analysis and community-driven rankings for the current season.
 - **📚 Community Grimoire**: Curated guides, build calculators, and event calendars to maximize your progression.
 - **💎 Refined Glassmorphism**: A modern, responsive interface with high-end micro-animations and a seamless dark aesthetic.
 - **⚡ Async Architecture**: Built with FastAPI and structured for scalability with centralized configuration and modular data management.
+- **🌐 REST API endpoints**: Fetch characters data dynamically via `/api/characters`.
+- **📖 About Portal**: Dedicated page highlighting our mission and open-source nature.
 
 ## 🛠️ Tech Stack
 

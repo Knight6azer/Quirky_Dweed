@@ -13,7 +13,7 @@ app = FastAPI(
     description=config.APP_DESCRIPTION,
     version=config.APP_VERSION,
     contact={
-        "name": "Spirit Blossom Hub Team",
+        "name": "Quirky_Dweed Team",
         "url": "https://github.com/Knight6azer/Grifffithhhhh",
     },
     license_info={
@@ -24,24 +24,25 @@ app = FastAPI(
 
 tags_metadata = [
     {"name": "General", "description": "General endpoints for the platform."},
-    {"name": "Characters", "description": "Endpoints related to Spirit Blossom characters."},
+    {"name": "Characters", "description": "Endpoints related to Quirky_Dweed characters."},
     {"name": "Rankings", "description": "Endpoints for tier lists and community rankings."},
 ]
 
 # Initialize Database Clients
 supabase = None
-character_manager = None
+from lib.characters import CharacterManager
 
 if config.validate():
     try:
         from supabase import create_client
-        from lib.characters import CharacterManager
         
         supabase = create_client(config.SUPABASE_URL, config.SUPABASE_ANON_KEY)
-        character_manager = CharacterManager(supabase)
         logger.info("Successfully connected to Supabase")
     except Exception as e:
         logger.error(f"Failed to initialize database clients: {e}")
+
+# Always initialize CharacterManager, falling back to mock data if supabase is None
+character_manager = CharacterManager(supabase)
 
 # Mount static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -54,15 +55,15 @@ templates = Jinja2Templates(directory="templates")
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {
         "request": request, 
-        "title": "Spirit Blossom Hub"
+        "title": "Quirky_Dweed"
     })
 
 @app.get("/characters", tags=["Characters"])
-async def characters_list(request: Request, q: str = None):
+async def characters_list(request: Request, q: str = None, role: str = None):
     characters = []
     if character_manager:
-        if q:
-            characters = character_manager.search_characters(q)
+        if q or role:
+            characters = character_manager.search_characters(q, role)
         else:
             characters = character_manager.get_all_characters()
     
@@ -70,7 +71,8 @@ async def characters_list(request: Request, q: str = None):
         "request": request, 
         "characters": characters, 
         "title": "Character Hub",
-        "search_query": q or ""
+        "search_query": q or "",
+        "selected_role": role or ""
     })
 
 @app.get("/characters/{character_id}", tags=["Characters"])
@@ -97,6 +99,19 @@ async def tier_lists_view(request: Request):
             tier_lists = response.data
         except Exception as e:
             logger.error(f"Error fetching tier lists: {e}")
+    else:
+        # Mock tier list
+        tier_lists = [
+            {
+                "name": "Global Standings - Season 4",
+                "characters": [
+                    {"name": "Ahri", "tier": "S"},
+                    {"name": "Yasuo", "tier": "S"},
+                    {"name": "Cassiopeia", "tier": "A"},
+                    {"name": "Thresh", "tier": "S"}
+                ]
+            }
+        ]
             
     return templates.TemplateResponse("tier_lists.html", {
         "request": request, 
@@ -111,6 +126,30 @@ async def resources_view(request: Request):
         "title": "Community Resources"
     })
 
+@app.get("/about", tags=["General"])
+async def about_view(request: Request):
+    return templates.TemplateResponse("about.html", {
+        "request": request,
+        "title": "About Us"
+    })
+
+@app.get("/api/characters", tags=["Characters", "API"])
+async def api_characters_list(q: str = None, role: str = None):
+    if not character_manager:
+        raise HTTPException(status_code=500, detail="Database not initialized")
+    if q or role:
+        return character_manager.search_characters(q, role)
+    return character_manager.get_all_characters()
+
+@app.get("/api/characters/{character_id}", tags=["Characters", "API"])
+async def api_character_detail(character_id: int):
+    if not character_manager:
+        raise HTTPException(status_code=500, detail="Database not initialized")
+    character = character_manager.get_character_by_id(character_id)
+    if not character:
+        raise HTTPException(status_code=404, detail="Character not found")
+    return character
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

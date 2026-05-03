@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | Spirit Blossom Hub</title>
+    <title>{{ title }} | Quirky_Dweed</title>
     <link rel="icon" href="/public/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body class="bg-dark text-light">
@@ -16,7 +17,7 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="/">
                 <img src="/public/placeholder.svg" alt="Logo" width="40" height="40" class="me-2">
-                <span class="fw-bold gradient-text">Spirit Blossom Hub</span>
+                <span class="fw-bold gradient-text">Quirky_Dweed</span>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="fa-solid fa-bars text-light"></span>
@@ -30,11 +31,13 @@
                         <a class="nav-link {% if request.url.path == '/characters' %}active{% endif %}" href="/characters">Characters</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item">
                         <a class="nav-link {% if request.url.path == '/tier-lists' %}active{% endif %}" href="/tier-lists">Tier Lists</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.url.path == '/resources' %}active{% endif %}" href="/resources">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.url.path == '/about' %}active{% endif %}" href="/about">About</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +50,8 @@
 
     <footer class="footer mt-auto py-5 glass-footer">
         <div class="container text-center">
-            <p class="mb-2 text-secondary">&copy; 2024 Spirit Blossom Hub. All rights reserved.</p>
+            <p class="mb-2 text-secondary">&copy; 2024 Quirky_Dweed. All rights reserved.</p>
+            <p class="mb-3 signature-text fw-bold">Crafted with <i class="fa-solid fa-heart" style="color: var(--accent);"></i> by Knight6azer</p>
             <div class="social-links d-flex justify-content-center gap-3">
                 <a href="#" class="text-secondary hover-primary"><i class="fab fa-discord"></i></a>
                 <a href="#" class="text-secondary hover-primary"><i class="fab fa-twitter"></i></a>

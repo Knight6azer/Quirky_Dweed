@@ -1,6 +1,6 @@
-# Contributing to Spirit Blossom Hub
+# Contributing to Quirky_Dweed
 
-Thank you for your interest in contributing to Spirit Blossom Hub! We welcome contributions from the community and want to make the process as easy and transparent as possible.
+Thank you for your interest in contributing to Quirky_Dweed! We welcome contributions from the community and want to make the process as easy and transparent as possible.
 
 ## 🚀 Ways to Contribute
 
