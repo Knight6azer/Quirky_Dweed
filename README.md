@@ -1,4 +1,4 @@
-# 🌸 Quirky_Dweed 2.1
+# 🌸 Quirky_Dweed
 
 A premium, high-performance platform for Quirky_Dweed enthusiasts. Explore detailed character lore, track real-time meta rankings, and access curated community resources—all in one immersive experience.
 

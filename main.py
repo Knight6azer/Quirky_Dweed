@@ -14,7 +14,7 @@ app = FastAPI(
     version=config.APP_VERSION,
     contact={
         "name": "Quirky_Dweed Team",
-        "url": "https://github.com/Knight6azer/Grifffithhhhh",
+        "url": "https://github.com/Knight6azer/Quirky_Dweed",
     },
     license_info={
         "name": "MIT License",
@@ -24,8 +24,8 @@ app = FastAPI(
 
 tags_metadata = [
     {"name": "General", "description": "General endpoints for the platform."},
-    {"name": "Characters", "description": "Endpoints related to Quirky_Dweed characters."},
-    {"name": "Rankings", "description": "Endpoints for tier lists and community rankings."},
+    {"name": "Characters", "description": "Endpoints related to anime, manga, and manhwa characters."},
+    {"name": "Rankings", "description": "Endpoints for power scaling tier lists and community rankings."},
 ]
 
 # Initialize Database Clients
@@ -103,12 +103,25 @@ async def tier_lists_view(request: Request):
         # Mock tier list
         tier_lists = [
             {
-                "name": "Global Standings - Season 4",
+                "name": "Cross-Verse Power Scaling — 2026",
                 "characters": [
-                    {"name": "Ahri", "tier": "S"},
-                    {"name": "Yasuo", "tier": "S"},
-                    {"name": "Cassiopeia", "tier": "A"},
-                    {"name": "Thresh", "tier": "S"}
+                    {"name": "Sung Jinwoo", "tier": "S"},
+                    {"name": "Gojo Satoru", "tier": "S"},
+                    {"name": "Levi Ackerman", "tier": "A"},
+                    {"name": "Frieren", "tier": "S"},
+                    {"name": "Guts", "tier": "A"},
+                    {"name": "Cha Hae-In", "tier": "A"}
+                ]
+            },
+            {
+                "name": "Fan Favorite Protagonists — Spring 2026",
+                "characters": [
+                    {"name": "Sung Jinwoo", "tier": "S"},
+                    {"name": "Frieren", "tier": "S"},
+                    {"name": "Guts", "tier": "S"},
+                    {"name": "Gojo Satoru", "tier": "A"},
+                    {"name": "Cha Hae-In", "tier": "A"},
+                    {"name": "Levi Ackerman", "tier": "B"}
                 ]
             }
         ]

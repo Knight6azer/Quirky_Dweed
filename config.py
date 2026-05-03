@@ -9,8 +9,8 @@ class Config:
     
     # App Settings
     APP_TITLE = "Quirky_Dweed"
-    APP_VERSION = "2.1.0"
-    APP_DESCRIPTION = "A premium platform for Quirky_Dweed lore, rankings, and resources."
+    APP_VERSION = "1.0.0"
+    APP_DESCRIPTION = "Your ultimate hub for anime, manga, manhwa characters, power scaling, and quirky otaku culture."
     
     # Supabase Configuration
     SUPABASE_URL = os.getenv("SUPABASE_URL")
