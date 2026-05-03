@@ -4,11 +4,11 @@
     --accent: #6c5ce7;
     --bg-dark: #111118;
     --bg-darker: #0a0a0f;
-    --bg-card: rgba(25, 25, 35, 0.6);
-    --text-light: #f8f9fa;
-    --text-muted: #8a8a9e;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --bg-card: rgba(30, 30, 42, 0.85);
+    --text-light: #ffffff;
+    --text-muted: #c4c4d4;
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.15);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -17,6 +17,8 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     overflow-x: hidden;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
 }
 
 .gradient-text {
@@ -66,11 +68,12 @@ body {
 /* Cards */
 .glass-card {
     background: var(--bg-card);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(24px);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
     padding: 2.5rem;
     transition: var(--transition-smooth);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .glass-card:hover {
