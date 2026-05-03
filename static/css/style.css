@@ -1,10 +1,10 @@
-    --primary: #00ffcc;
-    --primary-dark: #00b38f;
-    --secondary: #b026ff;
-    --accent: #ff0055;
-    --bg-dark: #0a0a0c;
-    --bg-darker: #050507;
-    --bg-card: rgba(20, 20, 28, 0.6);
+    --primary: #ff7e67;
+    --primary-dark: #f0624d;
+    --secondary: #ffd369;
+    --accent: #6c5ce7;
+    --bg-dark: #111118;
+    --bg-darker: #0a0a0f;
+    --bg-card: rgba(25, 25, 35, 0.6);
     --text-light: #f8f9fa;
     --text-muted: #8a8a9e;
     --glass-bg: rgba(255, 255, 255, 0.03);
@@ -53,8 +53,8 @@ body {
 .hero-section {
     position: relative;
     padding: 120px 0 80px;
-    background: radial-gradient(circle at top right, rgba(0, 255, 204, 0.1), transparent),
-                radial-gradient(circle at bottom left, rgba(176, 38, 255, 0.1), transparent);
+    background: radial-gradient(circle at top right, rgba(255, 126, 103, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(255, 211, 105, 0.15), transparent);
 }
 
 .hero-title {
@@ -75,9 +75,9 @@ body {
 
 .glass-card:hover {
     transform: translateY(-8px) scale(1.01);
-    border-color: rgba(0, 255, 204, 0.3);
+    border-color: rgba(255, 126, 103, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-                0 0 20px rgba(0, 255, 204, 0.1);
+                0 0 20px rgba(255, 126, 103, 0.1);
 }
 
 .bg-darker {
@@ -101,7 +101,7 @@ body {
 
 .btn-premium:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.4);
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.4);
     color: var(--bg-dark);
 }
 
